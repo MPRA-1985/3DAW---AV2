@@ -1,0 +1,133 @@
+<html lang = "pt-br">
+
+	<head>
+
+		<title>XIMBOLÉ BAHIANO</title>
+
+		<meta charset="utf-8">
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+		<link href="css/estilo.css" rel="stylesheet">
+
+		<script src="js/main.js"></script>
+
+	</head>
+
+	<body id="listarProduto">
+
+		<!-- MENU -->
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+	    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+          		<span class="navbar-toggler-icon"></span>
+
+        	</button>
+
+		    
+
+		    <div class="collapse navbar-collapse" id="navbarNav">
+
+		        <ul class="navbar-nav mr-auto">
+
+		          <li class="nav-item">
+		            <a class="nav-link" href="index.html">Home</a>
+		          </li>
+
+		          <li class="nav-item">
+		            <a class="nav-link" href="incluirProduto.html">Incluir novo produto</a>
+		          </li>
+
+		          <li class="nav-item">
+		            <a id="alterarProduto" class="nav-link" href="alterar.html">Alterar produto</a>
+		          </li>
+
+		          <li class="nav-item active">
+		            <a class="nav-link" href="listarTodos.html">Listar todos os produtos</a>
+		          </li>
+
+		          <li class="nav-item">
+		            <a class="nav-link" href="listar_um.html">Listar um produto</a>
+		          </li>
+
+		          <li class="nav-item">
+		            <a class="nav-link" href="apagar.html">Remover produto</a>
+		          </li>
+
+		        </ul>
+
+		    </div>
+
+		</nav>
+		 <!-- FIM DO MENU -->
+
+		<!-- TABELA -->
+		<div id="content" class="mx-auto">
+
+	        <table class='table table-striped table-bordered' style="margin-top: 20px;"  >
+
+	          <tr>
+	            <th>Código de barras</th>
+	            <th>Nome</th>
+	            <th>Categoria</th>
+	            <th>Preço de venda</th>
+	            <th>Estoque</th>
+	          </tr>
+
+	    </div>
+	    <!-- FIM DA TABELA -->
+
+	</body>
+
+	<script>
+
+		// AO CARREGAR A PÁGINA
+		var produtos;
+		
+		let xmlHttp = new XMLHttpRequest();
+
+	    xmlHttp.onreadystatechange = function() {
+
+	      if (this.readyState == 4 && this.status == 200) {
+
+	          console.log( "retorno do back: ", this.responseText );
+	          
+	          produtos = JSON.parse(this.responseText);
+	          console.log( "objeto parseado no front: ", produtos );
+	          console.log( "teste: ", produtos.resultados );
+
+	          for ( var i = 0; i < produtos.resultados.length; i++  ) {
+
+	          	var trTable = 	"<tr><td>" + produtos.resultados[i]['codigoBarras'] + "</td>" +	// codigo de barras
+	          					"<td>" + produtos.resultados[i]['nomeProduto'] + "</td>" + // nome
+								"<td>" + produtos.resultados[i]['categoria'] + "</td>" + // categoria
+								"<td>" + produtos.resultados[i]['preco'] + "</td>" + // preco
+								"<td>" + produtos.resultados[i]['quantidade'] + "</td>" + // quantidade
+								"</td></tr>";
+
+				$("#listarProduto table").append(trTable);				 
+
+	          }
+	          
+	      } 
+
+	    }  
+	      
+	    xmlHttp.open("GET", "carregar.php");
+
+	    xmlHttp.send();
+
+
+	</script>
+
+</html>
+

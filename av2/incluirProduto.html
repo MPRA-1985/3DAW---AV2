@@ -1,0 +1,195 @@
+<html lang = "pt-br">
+
+	<head>
+
+		<title>XIMBOLÉ BAHIANO</title>
+
+		<meta charset="utf-8">
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+		<link href="css/estilo.css" rel="stylesheet">
+
+		<script src="js/main.js"></script>
+
+	</head>
+
+	<body id="incluirProduto">
+
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+	    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+          		<span class="navbar-toggler-icon"></span>
+
+        	</button>
+
+		    <!-- MENU -->
+
+		    <div class="collapse navbar-collapse" id="navbarNav">
+
+		        <ul class="navbar-nav mr-auto">
+
+		          <li class="nav-item">
+		            <a class="nav-link" href="index.html">Home</a>
+		          </li>
+
+		          <li class="nav-item active">
+		            <a class="nav-link" href="incluirProduto.html">Incluir novo produto</a>
+		          </li>
+
+		          <li class="nav-item">
+		            <a class="nav-link" href="alterar.html">Alterar produto</a>
+		          </li>
+
+		          <li class="nav-item">
+		            <a class="nav-link" href="listarTodos.html">Listar todos os produtos</a>
+		          </li>
+
+		          <li class="nav-item">
+		            <a class="nav-link" href="listar_um.html">Listar um produto</a>
+		          </li>
+
+		          <li class="nav-item">
+		            <a class="nav-link" href="apagar.html">Remover produto</a>
+		          </li>
+
+		        </ul>
+
+		    </div>
+
+		 </nav>
+
+		    <!-- FIM DO MENU -->
+
+
+		    <!-- FORMULÁRIO -->
+
+			<div id="content" class="mx-auto">
+
+		        <form class="form-row" style="margin-bottom: 85px;">
+
+			          <div class="col-sm-8">
+			            <label for="nome">Nome do produto</label>
+			            <input type="text" class="form-control" id="nome" name="nome" placeholder="Insira o Nome do produto">
+			          </div>
+
+			          <div class="col-sm-4">
+			            <label for="codigo">Código de barras</label>
+			            <input type="number" class="form-control" id="codigo" name="codigo" placeholder="Insira o código de barras">
+			          </div>
+
+			          <div class="col-sm-4">
+			            <label for="fabricante">Fabricante</label>
+			            <input type="text" class="form-control" id="fabricante" name="fabricante" placeholder="Insira o nome do fabricante">
+			          </div>
+
+			          <div class="col-sm-4">
+			            <label for="preco">Preço</label>
+			            <input type="number" class="form-control preco" id="preco" name="preco" placeholder="Insira o preço">
+			          </div>
+
+			          <div class="col-sm-4">
+			            <label for="qtde">Quantidade em estoque</label>
+			            <input type="number" class="form-control preco" id="qtde" name="qtde" placeholder="Insira a quantidade">
+			          </div>
+
+
+
+			          <div class="col-sm-4">
+			            <label for="categoria">Categoria</label>
+			            <select id="categoria" class="form-control" name="select">
+						</select>
+			          </div>
+
+			          <div class="col-sm-4">
+			            <label for="select">Tipo</label>
+			            <select id="tipo" class="form-control" name="select">
+						</select>
+			          </div>
+
+			          <div class="col-sm-4">
+			            <label for="peso">Peso</label>
+			            <input type="number" class="form-control peso" id="peso" name="peso" placeholder="Insira o peso">
+			          </div>
+
+			          <div class="col-sm-4">
+			            <label for="data">Data</label>
+			            <input type="date" class="form-control data" id="data" name="data" placeholder="Insira a data">
+			          </div>
+
+			          <div class="col-sm-8">
+			            <label for="descricao">Descrição</label>
+			            <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Insira uma descrição">
+			          </div>
+
+			          <div class="form-group col-md-12">
+			              <a id="incluir" class="btn btn-primary">Enviar</a>
+			          </div>
+
+			      </form>
+
+		    </div>
+
+		    <!-- FIM DO FORMULÁRIO -->
+
+	</body>
+
+	<script>
+
+		// AO CARREGAR A PÁGINA
+		var dadosSelects;
+		
+		let xmlHttp = new XMLHttpRequest();
+
+	    xmlHttp.onreadystatechange = function() {
+
+	      if (this.readyState == 4 && this.status == 200) {
+
+	          console.log( "retorno do back: ", this.responseText );
+	          
+	          dadosSelects = JSON.parse(this.responseText);
+	          console.log( "objeto parseado no front: ", dadosSelects );
+
+	          for ( var i = 0; i < dadosSelects.categoria.length; i++ ) {
+	          	var option = "<option value='" + dadosSelects.categoria[i]['nomeCategoria'] + "'>" + dadosSelects.categoria[i]['nomeCategoria'] + "</option>"
+	          	$( "#incluirProduto form #categoria" ).append(option);
+	          }
+
+	          for ( var i = 0; i < dadosSelects.tipo.length; i++ ) {
+	          	var option = "<option value='" + dadosSelects.tipo[i]['nomeTipo'] + "'>" + dadosSelects.tipo[i]['nomeTipo'] + "</option>"
+	          	$( "#incluirProduto form #tipo" ).append(option);
+	          }
+
+	          var option1 = "<option value='...' selected>...</option>"
+	          $( "#incluirProduto form #categoria" ).prepend(option1);
+	          $( "#incluirProduto form #tipo" ).prepend(option1);
+
+	          $( "#incluirProduto form #categoria option:first-child" ).attr("selected");
+	          $( "#incluirProduto form #tipo option:first-child" ).attr("selected");
+
+	          
+	      } 
+
+	    }  
+	      
+	    xmlHttp.open("GET", "carregarSelects.php");
+
+	    xmlHttp.send();
+
+
+
+	</script>
+
+</html>
+
